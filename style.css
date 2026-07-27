@@ -1,14 +1,13 @@
 /*1.Config Gerais e Variáveis*/
 :root {
-    /*Cores Principais*/
-    --bg-color: #0b0f19;          /*Fundo principal*/
-    --bg-card: #111827;           /*Fundo cards e elementos*/
-    --header-bg: rgba(11, 15, 25, 0.85); /*Fundo do header*/
+    --bg-color: #0b0f19;
+    --bg-card: #111827;
+    --header-bg: rgba(11, 15, 25, 0.85);
     
-    --text-color: #e5e7eb;        /*Texto principal*/
-    --text-muted: #9ca3af;        /*Texto secundário*/
+    --text-color: #e5e7eb;
+    --text-muted: #9ca3af
     
-    --accent-color: #3b82f6;      /*Destaque/Ação*/
+    --accent-color: #3b82f6;
     --accent-hover: #2563eb;
     --accent-glow: rgba(59, 130, 246, 0.25);
     
@@ -37,6 +36,11 @@ body {
     line-height: 1.6;
 }
 
+/*Trava de scroll quando o menu mobile está aberto*/
+body.menu-open {
+    overflow: hidden;
+}
+
 /*Container Centralizado*/
 .container {
     width: 90%;
@@ -61,7 +65,7 @@ a {
     width: 100%;
     z-index: 1000;
     background-color: var(--header-bg);
-    backdrop-filter: blur(10px); /* Efeito de vidro fosco (glassmorphism) */
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -96,8 +100,43 @@ a {
     transition: var(--transition);
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active-link {
     color: var(--accent-color);
+    font-weight: 600;
+}
+
+/*Botão Hambúrguer para celular*/
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/*Animação do Botão Hambúrguer*/
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /*Botão Primário*/
@@ -299,7 +338,7 @@ a {
 }
 
 .skill-card:hover {
-    transform: translateY(-5px); /* Efeito de elevação suave ao passar o mouse */
+    transform: translateY(-5px);
     border-color: var(--accent-color);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
@@ -320,7 +359,7 @@ a {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-bottom: 20px;
-    flex-grow: 1; /* Garante alinhamento uniforme do rodapé dos cards */
+    flex-grow: 1;
 }
 
 /*Tags de Tecnologias*/
@@ -450,7 +489,7 @@ a {
 
 .btn-project-details:hover {
     color: var(--accent-hover);
-    transform: translateX(4px); /* Animação suave para a direita */
+    transform: translateX(4px);
 }
 
 
@@ -526,8 +565,44 @@ a {
 
 /*Responsividade*/
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    /* Menu de Navegação em Overlay no Celular */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--bg-card);
+        border-left: 1px solid var(--border-color);
+        padding: 100px 30px 40px 30px;
+        transition: var(--transition);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-menu a {
+        font-size: 1.1rem;
+    }
+
     .hero-container {
-        grid-template-columns: 1fr; /*Virar a Coluna*/
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 30px;
     }
