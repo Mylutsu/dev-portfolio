@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Desenvolvedor de Software</title>
-    <!-- Fonte Google Inter para uma tipografia moderna e limpa -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Link para nosso arquivo de estilos CSS -->
+    <!--Css-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CABEÇALHO DO SITE (HEADER) -->
+    <!--Cabeçalho-->
     <header class="header">
         <div class="container header-container">
             <!-- Logo / Identidade Dev -->
@@ -39,10 +38,57 @@
         </div>
     </header>
 
-    <!-- ÁREA PRINCIPAL (Vamos preencher nas próximas etapas) -->
+    <!--Área Central-->
     <main>
-        <section id="sobre" style="padding: 100px 0; text-align: center;">
-            <h2>Seção Sobre (Em breve)</h2>
+        <section class="hero" id="home">
+            <div class="container hero-container">
+                
+                <!--Apresentação-->
+                <div class="hero-content">
+                    <div class="badge-status">
+                        <span class="status-dot"></span>
+                        Disponível para novas oportunidades
+                    </div>
+
+                    <h1 class="hero-title">
+                        Olá, eu sou o <span class="highlight">Leonardo Matias</span> 👋
+                    </h1>
+                    
+                    <h2 class="hero-subtitle">
+                        Desenvolvedor de Software / Backend & Full Stack
+                    </h2>
+                    
+                    <p class="hero-description">
+                        Especializado em construir aplicações robustas, APIs eficientes e arquiteturas limpas com <strong>Python, Flask e SQL</strong>, combinadas com boas práticas de versionamento (Git) e foco na experiência do usuário (UX).
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projetos" class="btn-primary">Ver Projetos</a>
+                        <a href="#contato" class="btn-secondary">Entrar em Contato</a>
+                    </div>
+                </div>
+
+                <!-- Coluna Visual (Avatar ou Card de Código) -->
+                <div class="hero-visual">
+                    <div class="code-card">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="code-title">dev_profile.py</span>
+                        </div>
+                        <pre class="code-body"><code><span class="keyword">class</span> <span class="class-name">Developer</span>:
+                        <span class="keyword">def</span> <span class="function">__init__</span>(self):
+                            self.nome = <span class="string">"Seu Nome"</span>
+                            self.role = <span class="string">"Software Developer"</span>
+                            self.stack = [<span class="string">"Python"</span>, <span class="string">"Flask"</span>, <span class="string">"SQL"</span>, <span class="string">"Git"</span>]
+                            self.foco = <span class="string">"APIs & Automação"</span>
+
+                        <span class="keyword">def</span> <span class="function">status</span>(self):
+                            <span class="keyword">return</span> <span class="string">"Pronto para resolver problemas!"</span></code></pre>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 

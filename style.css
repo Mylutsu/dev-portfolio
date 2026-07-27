@@ -115,3 +115,167 @@ a {
     background-color: var(--accent-hover);
     box-shadow: 0 0 15px var(--accent-glow);
 }
+
+/*3. Seção Apresentação*/
+.hero {
+    min-height: 100vh;
+    padding-top: 130px; /* Compensa a altura do header fixo */
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Coluna de texto ligeiramente maior */
+    gap: 50px;
+    align-items: center;
+}
+
+/*Badge de Status Online*/
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981; /* Verde online */
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+}
+
+/*Títulos e Parágrafo*/
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    max-width: 540px;
+}
+
+.hero-description strong {
+    color: var(--text-color);
+}
+
+/*Grupos de Botões*/
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+    border-color: var(--text-muted);
+}
+
+/*Card de Código IDE*/
+.code-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.code-header {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.code-title {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.code-body {
+    padding: 20px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+/*Highlighting do Card*/
+.keyword { color: #f43f5e; }
+.class-name { color: #38bdf8; }
+.function { color: #a855f7; }
+.string { color: #34d399; }
+
+/*Responsividade*/
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr; /*Virar a Coluna*/
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        margin: 0 auto 30px auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .badge-status {
+        margin: 0 auto 20px auto;
+    }
+}
