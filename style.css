@@ -1,0 +1,117 @@
+/*1.Config Gerais e Variáveis*/
+:root {
+    /*Cores Principais*/
+    --bg-color: #0b0f19;          /*Fundo principal*/
+    --bg-card: #111827;           /*Fundo cards e elementos*/
+    --header-bg: rgba(11, 15, 25, 0.85); /*Fundo do header*/
+    
+    --text-color: #e5e7eb;        /*Texto principal*/
+    --text-muted: #9ca3af;        /*Texto secundário*/
+    
+    --accent-color: #3b82f6;      /*Destaque/Ação*/
+    --accent-hover: #2563eb;
+    --accent-glow: rgba(59, 130, 246, 0.25);
+    
+    --border-color: #1f2937;
+    
+    /*Fontes e Transição*/
+    --font-primary: 'Inter', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+}
+
+/*Container Centralizado*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*2. Cabeçalho/NavBar*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco (glassmorphism) */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+/*Logo*/
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--text-color);
+}
+
+/*Menu de Navegação*/
+.nav-menu ul {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+/*Botão Primário*/
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
