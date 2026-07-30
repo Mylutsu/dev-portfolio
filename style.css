@@ -550,6 +550,27 @@ a {
     font-size: 1rem;
 }
 
+.btn-whatsapp {
+    background-color: #25D366;
+    color: #ffffff;
+    border: 1px solid #25D366;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1da851;
+    border-color: #1da851;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+    transform: translateY(-2px);
+}
+
 /* Footer */
 .footer {
     background-color: var(--bg-color);
@@ -580,6 +601,8 @@ a {
     animation: blink 0.7s infinite;
     margin-left: 2px;
 }
+
+
 
 /* Animação do cursor de digitação */
 @keyframes blink {
